@@ -11,5 +11,5 @@ How to run this testcase:
    In Eclipse:
    - Right Click on Project > Properties > Java Build Path > Add External JARs
    - Add 2 JARs in extracted selenium zip file, and add all the JARs in libs folder.
-3. Edit TestCase1.java, on System.setProperty. Locate the directory of extracted browser driver, and copy the full directory to the setProperty argument.
+3. Edit TestCase1.java, on browserDriver variable. Locate the directory of extracted browser driver, copy and replace to the variable.
 4. Run the project

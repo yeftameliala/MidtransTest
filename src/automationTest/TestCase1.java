@@ -15,7 +15,9 @@ public class TestCase1 {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 
-		System.setProperty("webdriver.gecko.driver","C:\\Users\\Martin\\eclipse-workspace\\MidtransTest\\bin\\automationTest\\geckodriver.exe");
+		String browserDriver = "C:\\Users\\Martin\\eclipse-workspace\\MidtransTest\\bin\\automationTest\\geckodriver.exe";
+		
+		System.setProperty("webdriver.gecko.driver",browserDriver);
 		WebDriver driver = new FirefoxDriver();
 		
 		//Get Into Web
@@ -107,7 +109,10 @@ public class TestCase1 {
 			try {
 				verifySuccess = driver.findElement(By.cssSelector("div[class='text-success text-bold']")).isDisplayed();
 				WebElement tranSuccess = driver.findElement(By.cssSelector("div[class='text-success text-bold']"));
-				if(tranSuccess.getText().trim().equals("Transaction successful")) System.out.println("Message: 'Transaction Successful' verified..");
+				if(tranSuccess.getText().trim().equals("Transaction successful")) {
+					System.out.println("Message: 'Transaction Successful' verified..");
+					break;
+				}
 			} catch (org.openqa.selenium.NoSuchElementException e) {
 				System.out.println("Error message: "+e.getMessage());
 			}
